@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<NoWarn>1701;1702;1591</NoWarn>
+		<DocumentationFile>Blog.Service.New.Web.Core.xml</DocumentationFile>
+	</PropertyGroup>
+
+
+
+	<ItemGroup>
+		<None Remove="Blog.Service.New.Web.Core.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Blog.Service.New.Application\Blog.Service.New.Application.csproj" />
+		<ProjectReference Include="..\Blog.Service.New.Database.Migrations\Blog.Service.New.Database.Migrations.csproj" />
+	</ItemGroup>
+
+</Project>
