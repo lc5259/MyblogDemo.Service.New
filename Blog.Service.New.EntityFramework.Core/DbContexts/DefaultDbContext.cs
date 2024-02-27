@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Service.New.EntityFramework.Core.DbContexts;
 
-[AppDbContext("ConnectionStrings:SqlServerConnectionString", DbProvider.Npgsql)]
+[AppDbContext("ConnectionStrings:PostgreSQLConnectionString", DbProvider.Npgsql)]
 public class DefaultDbContext : AppDbContext<DefaultDbContext>
 {
     public DefaultDbContext(DbContextOptions<DefaultDbContext> options) : base(options)

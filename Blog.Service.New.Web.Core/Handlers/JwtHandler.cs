@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
-namespace Blog.Service.New.Web.Core;
+namespace Blog.Service.New.Web.Core.Handlers;
 
 public class JwtHandler : AppAuthorizeHandler
 {

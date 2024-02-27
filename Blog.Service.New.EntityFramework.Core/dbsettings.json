@@ -1,7 +1,9 @@
 ﻿{
   "$schema": "https://gitee.com/dotnetchina/Furion/raw/v4/schemas/v4/furion-schema.json",
   "ConnectionStrings": {
-    "SqlServerConnectionString": "Server=124.221.50.140;Database=blog;User=sa;Password=lc123456.;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;"
+    "SqlServerConnectionString": "Server=124.221.50.140;Database=blog;User=sa;Password=lc123456.;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;",
+
+    "PostgreSQLConnectionString": "Host=124.221.50.140;Port=5432;Database=postgres;Username=postgres;Password=123456;"
 
   }
 }

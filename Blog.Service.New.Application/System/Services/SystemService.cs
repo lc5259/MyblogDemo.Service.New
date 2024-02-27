@@ -1,4 +1,4 @@
-﻿namespace Blog.Service.New.Application;
+﻿namespace Blog.Service.New.Application.System.Services;
 
 public class SystemService : ISystemService, ITransient
 {

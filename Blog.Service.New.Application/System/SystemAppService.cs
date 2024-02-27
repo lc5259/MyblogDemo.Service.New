@@ -1,4 +1,6 @@
-﻿namespace Blog.Service.New.Application;
+﻿using Blog.Service.New.Application.System.Services;
+
+namespace Blog.Service.New.Application.System;
 
 /// <summary>
 /// 系统服务接口
