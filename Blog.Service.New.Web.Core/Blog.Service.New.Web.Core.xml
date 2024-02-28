@@ -4,5 +4,13 @@
         <name>Blog.Service.New.Web.Core</name>
     </assembly>
     <members>
+        <!-- Badly formed XML comment ignored for member "M:Blog.Service.New.Web.Core.Handlers.JwtHandler.PipelineAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Microsoft.AspNetCore.Http.DefaultHttpContext)" -->
+        <member name="M:Blog.Service.New.Web.Core.Handlers.JwtHandler.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)">
+            <summary>
+            重写 Handler 添加自动刷新收取逻辑
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -4,12 +4,73 @@
         <name>Blog.Service.New.Application</name>
     </assembly>
     <members>
-        <member name="T:Blog.Service.New.Application.SystemAppService">
+        <member name="M:Blog.Service.New.Application.Auth.AuthService.GetPublicKey">
+            <summary>
+            获取公钥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Service.New.Application.Auth.Dtos.ThirdPartyLogin">
+            <summary>
+            第三方登录参数
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.ThirdPartyLogin.param">
+            <summary>
+            第三方登录参数
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.ThirdPartyLogin.type">
+            <summary>
+            第三方登录方式
+            </summary>
+        </member>
+        <member name="T:Blog.Service.New.Application.Auth.Dtos.LoginResponse">
+            <summary>
+            登录返回结果
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.level">
+            <summary>
+            消息级别
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.userId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="P:Blog.Service.New.Application.Auth.Dtos.LoginResponse.message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="T:Blog.Service.New.Application.Auth.Dtos.LoginMesageLevel">
+            <summary>
+            登录消息级别
+            </summary>
+        </member>
+        <member name="T:Blog.Service.New.Application.System.SystemAppService">
             <summary>
             系统服务接口
             </summary>
         </member>
-        <member name="M:Blog.Service.New.Application.SystemAppService.GetDescription">
+        <member name="M:Blog.Service.New.Application.System.SystemAppService.GetDescription">
             <summary>
             获取系统描述
             </summary>

@@ -131,8 +131,8 @@ namespace Blog.Service.New.Core.Jwt
 
     public class ComplexToken
     {
-        public Token AccessToken { get; set; }
-        public Token RefreshToken { get; set; }
+        public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
     }
 
     public enum TokenType

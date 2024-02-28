@@ -77,9 +77,8 @@ namespace Blog.Service.New.Core.EFCore
             {
                 CurrentUserModel currentUser = JSON.Deserialize<CurrentUserModel>(currentUserStr);
                 entity.created_by = currentUser.Id;
-                entity.created_by_name = currentUser.Code;
-           
-              
+                entity.created_by_name = currentUser.Code;         
+             
                 entity.updated_by = currentUser.Id;
                 entity.updated_by_name = currentUser.Code; 
 

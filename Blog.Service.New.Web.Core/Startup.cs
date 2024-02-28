@@ -3,8 +3,10 @@ using Blog.Service.New.Web.Core.Handlers;
 using Furion;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MrHuo.OAuth;
 using System;
 
 namespace Blog.Service.New.Web.Core;
@@ -22,13 +24,17 @@ public class Startup : AppStartup
         //services.AddJwt<JwtHandler>(); //鉴权授权。这是默认授权方式，需要授权的方法需要添加 [Ahthorize] 特性
         services.AddJwt<JwtHandler>(enableGlobalAuthorize:true); //全局授权，每个接口都必须授权才能访问，无需添加特性
 
-        services.AddCorsAccessor();
+        services.AddCorsAccessor(); //配置跨域
 
         //配置redis
         string _connectStr = App.Configuration["Redis:Connection"].ToString();
         string _instanceName = App.Configuration["Redis:InstanceName"].ToString();
         int _defaultDB = int.Parse( App.Configuration["Redis:DefaultDB"]);
         services.AddSingleton(new RedisHelper(_connectStr, _instanceName, _defaultDB));
+
+        //配置注入第三方登录服务.先实现qq
+        OAuthConfig.LoadFrom(App.Configuration, "oauth:qq");
+
 
 
         services.AddControllers()
@@ -47,7 +53,7 @@ public class Startup : AppStartup
 
         app.UseRouting();
 
-        app.UseCorsAccessor();
+        app.UseCorsAccessor(); //跨域
 
         app.UseAuthentication(); //鉴权
         app.UseAuthorization(); //授权

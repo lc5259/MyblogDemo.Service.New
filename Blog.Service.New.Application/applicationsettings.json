@@ -32,5 +32,40 @@
     "Connection": "124.221.50.140,password=123456", //连接地址，端口号，密码
     "InstanceName": "local", //实例名称
     "DefaultDB": "8" //db8数据库
+  },
+  //第三方登录配置
+  "oauth": {
+    "qq": {
+      "app_id": "qq_app_id",
+      "app_key": "qq_app_key",
+      "redirect_uri": "https://oauthlogin.net/oauth/qqcallback",
+      "scope": "get_user_info"
+    },
+    "github": {
+      "app_id": "github_app_id",
+      "app_key": "github_app_key",
+      "redirect_uri": "https://oauthlogin.net/oauth/githubcallback",
+      "scope": "repo"
+    },
+    "wechat": {
+      "app_id": "wechat_app_id",
+      "app_key": "wechat_app_key",
+      "redirect_uri": "https://oauthlogin.net/oauth/wechatcallback",
+      "scope": "snsapi_userinfo"
+    },
+
+    "gitee": {
+      "app_id": "gitee_app_id",
+      "app_key": "gitee_app_key",
+      "redirect_uri": "http://oauthlogin.net/oauth/giteecallback",
+      "scope": "user_info"
+    },
+    "gitlab": {
+      "app_id": "gitlab_app_id",
+      "app_key": "gitlab_app_key",
+      "redirect_uri": "http://oauthlogin.net/oauth/gitlabcallback",
+      "scope": "read_user"
+    }
+
   }
 }
