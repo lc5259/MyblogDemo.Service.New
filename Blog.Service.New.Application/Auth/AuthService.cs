@@ -61,8 +61,11 @@ namespace Blog.Service.New.Application.Auth
             //模拟下前端接口调用，先调用接口获取公钥
             //loginRequest.publicKey =  RSAUtil.GetKey();
 
+
             try
             {
+                Log.Information("开始进行注册操作！");
+
                 if (string.IsNullOrEmpty(loginRequest.code) || string.IsNullOrEmpty(loginRequest.password))
                 {
                     throw Oops.Oh("请输入完整用户信息！");
@@ -102,15 +105,20 @@ namespace Blog.Service.New.Application.Auth
                 this._entityManager.Create<AuthUser>(_authUser);
                 //await Db.GetRepository<AuthUser>().Entities.AddAsync(_authUser);
 
+                Log.Information($"用户{user.name}注册成功！");
+
                 return new LoginResponse()
                 {
                     result = true,
                     message = "注册成功",
                     level = LoginMesageLevel.Success.ToString()
                 };
+
+                
             }
             catch (Exception e)
             {
+                Log.Error($"用户：注册失败");
                 return new LoginResponse()
                 {
                     result = false,

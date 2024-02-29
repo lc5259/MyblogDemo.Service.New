@@ -1,4 +1,5 @@
-﻿using Blog.Service.New.Core.Redis;
+﻿using Blog.Service.New.Core.Filters;
+using Blog.Service.New.Core.Redis;
 using Blog.Service.New.Web.Core.Handlers;
 using Furion;
 using Microsoft.AspNetCore.Builder;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using MrHuo.OAuth;
 using System;
 
@@ -25,6 +27,32 @@ public class Startup : AppStartup
         services.AddJwt<JwtHandler>(enableGlobalAuthorize:true); //全局授权，每个接口都必须授权才能访问，无需添加特性
 
         services.AddCorsAccessor(); //配置跨域
+
+        //添加日志，输出到文件。
+        // 例子二：每天创建一个日志文件
+        services.AddFileLogging("application-{0:yyyy}-{0:MM}-{0:dd}.log", options =>
+        {
+            options.FileNameRule = fileName =>
+            {
+                return string.Format(fileName, DateTime.UtcNow);
+            };
+            options.WriteFilter = (logMsg) =>
+            {
+                return logMsg.LogLevel == LogLevel.Information;
+            };
+        });
+        services.AddFileLogging("error.log", options =>
+        {
+            options.WriteFilter = (logMsg) =>
+            {
+                return logMsg.LogLevel == LogLevel.Error;
+            };
+        });
+        //services.AddFileLogging();
+
+        //添加全局 审计日志拦截器
+        //services.AddMvcFilter<RequestAuditFilter>();
+        services.AddMonitorLogging();   // 默认读取 Logging:Monitor 下配置，支持传入参数自定义
 
         //配置redis
         string _connectStr = App.Configuration["Redis:Connection"].ToString();

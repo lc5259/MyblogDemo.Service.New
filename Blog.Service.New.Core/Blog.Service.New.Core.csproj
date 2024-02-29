@@ -8,6 +8,12 @@
 	</PropertyGroup>
 
 
+	<ItemGroup>
+	  <Compile Remove="Entities\UserInfoPartial.cs" />
+	  <Compile Remove="Filters\GlobalRegister.cs" />
+	</ItemGroup>
+
+
 
 	<ItemGroup>
 		<None Remove="Blog.Service.New.Core.xml" />
@@ -19,6 +25,10 @@
 		<PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.9.1.7" />
 		<PackageReference Include="MrHuo.OAuth.QQ" Version="1.1.1" />
 		<PackageReference Include="StackExchange.Redis" Version="2.7.23" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Enum\" />
 	</ItemGroup>
 
 </Project>
